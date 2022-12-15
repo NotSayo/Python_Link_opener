@@ -10,6 +10,7 @@ import json
 
 
 # Browser
+
 BROWSER = ''
 
 with open ('Browser.json', 'r') as f: 
