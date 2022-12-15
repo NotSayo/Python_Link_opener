@@ -34,14 +34,15 @@ with open ('Browser.json', 'w') as f:
 links = []
 lines = 0
 
-with open('links.txt', 'r') as f: 
-    lines = f.readlines()
-    f.close()
 
 with open('links.txt', 'r') as f:
+    lines = f.readlines()
+    f.seek(0)
     for line in lines:
         links.append(f.readline())
     f.close()
+    
+print(links)
     
 # Open cmd
 
