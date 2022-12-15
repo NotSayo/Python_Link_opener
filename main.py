@@ -42,7 +42,6 @@ with open('links.txt', 'r') as f:
         links.append(f.readline())
     f.close()
     
-print(links)
     
 # Open cmd
 
