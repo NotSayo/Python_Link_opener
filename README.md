@@ -1,12 +1,12 @@
-#----------------------------------
-#|                                 |
-#|                                 |
-#|                                 |
-#|        Python_Link_opener       |
-#|                                 |
-#|                                 |
-#|                                 |
-# ---------------------------------
+#  ----------------------------------
+#  |                                 |
+#  |                                 |
+#  |                                 |
+#  |        Python_Link_opener       |
+#  |                                 |
+#  |                                 |
+#  |                                 |
+#   ---------------------------------
 #
 # A simple link opener done in python
 # Just import all the links into the 'links.txt' file in the format '1 link per line' and run the script 
