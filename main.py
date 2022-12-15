@@ -49,6 +49,9 @@ pyautogui.keyDown('win')
 pyautogui.press('r')
 pyautogui.keyUp('win')
 time.sleep(0.1)
+pyautogui.typewrite('cmd')
+pyautogui.press('enter')
+time.sleep(0.3)
 
 # Create a string from the links
 
@@ -62,5 +65,15 @@ for line in lines:
 
 # Open the links
 
-pyautogui.typewrite(f"{BROWSER} {args}")
+pyautogui.typewrite(f"start {BROWSER} {args}")
+pyautogui.press('enter')
+
+# Close cmd
+
+time.sleep(1)
+
+pyautogui.keyDown('alt')
+pyautogui.press('tab')
+pyautogui.keyUp('alt')
+pyautogui.typewrite('exit')
 pyautogui.press('enter')
