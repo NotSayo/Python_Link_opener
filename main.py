@@ -4,12 +4,11 @@
 
 
 #Imports
-import pyautogui
-import time
+
+import os
 import json
 
-
-# Browser
+#Browser
 
 BROWSER = ''
 
@@ -28,30 +27,22 @@ with open ('Browser.json', 'w') as f:
     f.write(object)
     
     f.close()
-    
+
+
 
 # Code
+
 links = []
 lines = 0
 
+with open('links.txt', 'r') as f: 
+        lines = f.readlines()
+        f.close()
 
 with open('links.txt', 'r') as f:
-    lines = f.readlines()
-    f.seek(0)
     for line in lines:
         links.append(f.readline())
     f.close()
-    
-    
-# Open cmd
-
-pyautogui.keyDown('win')
-pyautogui.press('r')
-pyautogui.keyUp('win')
-time.sleep(0.1)
-pyautogui.typewrite('cmd')
-pyautogui.press('enter')
-time.sleep(0.3)
 
 # Create a string from the links
 
@@ -63,17 +54,11 @@ for line in lines:
     args += links[count].replace('\n', '') + ' '
     count += 1
 
-# Open the links
+# Make a bat file to open the links in the browser. Run it and then delete the file
 
-pyautogui.typewrite(f"start {BROWSER} {args}")
-pyautogui.press('enter')
+with open('open.bat', 'w') as f:
+    f.write(f"start {BROWSER} {args}")
+    f.close()
 
-# Close cmd
-
-time.sleep(1)
-
-pyautogui.keyDown('alt')
-pyautogui.press('tab')
-pyautogui.keyUp('alt')
-pyautogui.typewrite('exit')
-pyautogui.press('enter')
+os.system('open.bat')
+os.remove('open.bat')
